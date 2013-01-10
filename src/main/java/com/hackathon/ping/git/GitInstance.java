@@ -29,7 +29,7 @@ import org.eclipse.egit.github.core.service.UserService;
  * @author schristou88
  *
  */
-/*
+/*h
  * TODO: Remove this class and allow for DI with multiple git interfaces, this being the interface.
  * 1. To change this class to DI, first change this class to an interface.
  * 2. Port all github items to it's own class which extends this interface.

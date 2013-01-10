@@ -5,6 +5,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import java.awt.Color;
+import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -14,9 +15,10 @@ public class PingWinButton extends PingButton {
 	protected Icon mainImage;
 	Icon secondImage;
 	
-	public PingWinButton(String icon, String second, String text, ActionListener a) {
-		super(text, new ImageIcon(icon));
+	public PingWinButton(String icon, String second, String text, ActionListener a, Rectangle r) {
+		super("", new ImageIcon(icon));
 		this.addActionListener(a);
+		this.setBounds(r);
 		secondImage = new ImageIcon(second);
 		mainImage = super.getIcon();
 	}
