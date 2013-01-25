@@ -45,12 +45,16 @@ public class PingMainFrame extends JFrame {
 		base = new JPanel();
 		menu = new JPanel();
 		base.setBackground(Color.WHITE);
-
-		setUndecorated(true);
-		setResizable(false);
-		setSize(w, h);
-		setLocation(x, y);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Dimension d = new Dimension(w, h); // Window Size
+		
+		this.setBackground(Color.WHITE);
+		this.setUndecorated(true);
+		this.setResizable(false);
+		this.setMinimumSize(d); // done to give us a window at the desired size, Bad hack
+		this.setSize(d);
+		this.setLocation(x, y);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	
 		BorderLayout winLayout = new BorderLayout();
 		Container contentPane = this.getContentPane();
@@ -106,7 +110,9 @@ public class PingMainFrame extends JFrame {
 
 	private Container buildWinOpPanel() { 
 		JPanel winOpArea = new JPanel();
-		winOpArea.setSize(30, 10);
+		Dimension d = new Dimension(120, 40); // Button Area size
+		Dimension b = new Dimension(40, 40); // Button Size
+		winOpArea.setPreferredSize(d);
 		BoxLayout layout = new BoxLayout(winOpArea, BoxLayout.X_AXIS);
 		winOpArea.setLayout(layout);
 		Rectangle rect = new Rectangle();
@@ -123,6 +129,7 @@ public class PingMainFrame extends JFrame {
 						//throw new RuntimeException("windows close");
 				}
 			}, rect);
+			exitButton.setPreferredSize(b);
 
 			maximizeButton = new PingWinButton(icons[2], icons[3], "Maximize", new ActionListener() {
 				@Override
@@ -130,6 +137,8 @@ public class PingMainFrame extends JFrame {
 					setSize(dim.width, dim.height);
 				}
 			}, rect);
+			
+			maximizeButton.setPreferredSize(b);
 
 			minimizeButton = new PingWinButton(icons[1], icons[1], "Minimize", new ActionListener() {
 				@Override
@@ -137,6 +146,8 @@ public class PingMainFrame extends JFrame {
 					setState(JFrame.ICONIFIED);
 				}
 			}, rect);
+			
+			minimizeButton.setPreferredSize(b);
 
 			winOpArea.add(minimizeButton, Component.LEFT_ALIGNMENT);
 			winOpArea.add(maximizeButton, Component.RIGHT_ALIGNMENT);
