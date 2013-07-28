@@ -2,6 +2,7 @@ package com.hackathon.ping;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
@@ -24,6 +25,10 @@ public class PingRepoPanel extends JPanel { // Uses Group Layout
 	}
 
 	private void buildPanel() {
+		
+		this.setMinimumSize(new Dimension(500, 500));
+		this.setBackground(Color.white);
+		
 		Container account = createContainer("Account", Color.black); // holds the list of accounts
 		Container repo = createContainer("Repos", Color.red); // holds the list of repo's for selected account
 		Container wiki = createContainer("Wiki", Color.lightGray); // holds the details for a selected repo project

@@ -8,8 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public abstract class PingButton extends JButton {
-	protected final Color defaultColor = Color.WHITE;
-	protected final Color hoverColor = Color.GRAY;
+	protected final Color defaultColor = new Color(238,238,238);
+	protected final Color hoverColor = Color.LIGHT_GRAY;
 	
 	public PingButton(String text, ImageIcon imageIcon) {
 		super(text, imageIcon);
