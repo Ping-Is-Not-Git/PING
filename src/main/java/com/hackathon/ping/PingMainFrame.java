@@ -21,7 +21,7 @@ import java.io.IOException;
  * @author river226
  */
 
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial", "unused" })
 public class PingMainFrame extends JFrame {
 	JPanel base, menu, wiki;
 	PingButton winex, winmax, winmin;
@@ -88,9 +88,11 @@ public class PingMainFrame extends JFrame {
 
 			@Override
 			public void mouseDragged(MouseEvent e) {
+				if(!max) {
 				Point newlocation = e.getLocationOnScreen();
-
-				setLocation(newlocation.x - mousePoint.x, newlocation.y - mousePoint.y);
+				miniLoc.move(newlocation.x - mousePoint.x, newlocation.y - mousePoint.y);
+				setLocation(miniLoc);
+				}
 			}
 		});
 	}

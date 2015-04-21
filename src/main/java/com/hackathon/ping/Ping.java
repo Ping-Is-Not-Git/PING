@@ -10,6 +10,7 @@ import com.hackathon.ping.git.GitInstance;
 /**
  * @author river226
  */
+@SuppressWarnings("unused")
 public class Ping {
 
 	/**

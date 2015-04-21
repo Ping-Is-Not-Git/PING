@@ -17,7 +17,10 @@ import javax.swing.JPanel;
  * currently has placeholders for the elements. 
  */
 public class PingRepoPanel extends JPanel { // Uses Group Layout
-	GroupLayout layout = new GroupLayout(this);
+	private GroupLayout layout = new GroupLayout(this);
+	private PingAccountList accounts;
+	private PingRepoList repos;
+	private PingWiki wiki;
 
 	public PingRepoPanel() {
 		this.setLayout(layout);
