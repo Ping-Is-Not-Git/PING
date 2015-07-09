@@ -1,5 +1,7 @@
 bin/
-.classpath
+com/
 .project
+.classpath
 settings/
 target/
+*.class
